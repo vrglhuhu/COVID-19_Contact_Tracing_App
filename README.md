@@ -10,3 +10,11 @@ _I am Chean Bernard V. Vergel.  I am 18 years old and currently I am a first ye
 ### **PROGRAMMING LANGUAGE USED**
 > Python
 
+
+
+
+
+# _**Find me around the web**_ :earth_asia::earth_asia::earth_asia::
+_Please contact me at :envelope_with_arrow: vergelbernardchean@gmail.com or call me at :telephone_receiver: 0912-367-8985 if you have any questions._
+
+_If you encounter any issues, please report them immediately on this repository._ :beginner:
