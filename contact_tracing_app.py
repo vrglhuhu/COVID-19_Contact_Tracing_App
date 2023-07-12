@@ -4,6 +4,7 @@
 # Import tkinter
 import tkinter as tk
 from PIL import ImageTk, Image
+from add_action import InfoFrame
 
 # Create the main window
 def main_window():
@@ -36,7 +37,8 @@ def main_window():
 # Create add action
 def add_action():
     # Add action logic goes here
-    pass
+    info_frame = InfoFrame()
+    info_frame.place(x=0, y=0, relwidth=1, relheight=1)
 
 # Create search action
 def search_action():
