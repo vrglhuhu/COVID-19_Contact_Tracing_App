@@ -46,7 +46,7 @@ class AddFrame(tk.Frame):
         self.age_entry = tk.Entry(self, width=40)
         self.age_entry.place(x=58, y= 70)
         # Set initial text
-        self.age_entry.insert(0, "Your Age")  
+        self.age_entry.insert(0, "YOUR AGE")  
         self.age_entry.bind("<FocusIn>", self.clear_age_text)
         self.age_entry.config(fg="gray")
 
@@ -77,6 +77,29 @@ class AddFrame(tk.Frame):
         self.date_entry.config(fg="gray")
 
         # Contact Information label
+        self.contact_info = tk.Label(self, text="CONTACT INFORMATION.", height=1, font=("Arial", 8))
+        self.contact_info.place(x=410, y=10)
+        self.contact_info.config(bg="#20c997")
+
+        # Contact Number
+        self.cont_num = tk.Label(self, text="CONTACT NUMBER: ", height=1, font=("Arial", 8))
+        self.cont_num.place(x=410, y=40)
+        self.cont_num.config(bg="#BAF8FA")
+
+        # Contact Number Input
+
+        # Email Address
+        self.age = tk.Label(self, text="EMAIL ADDRESS: ", height=1, font=("Arial", 8))
+        self.age.place(x=410, y=70)
+        self.age.config(bg="#BAF8FA")
+
+        # Email Address Input
+
+
+
+
+
+
 
 
 
@@ -95,6 +118,9 @@ class AddFrame(tk.Frame):
         self.bday_entry.delete(0, tk.END)
         self.bday_entry.config(fg="black")
     def clear_date_text(self, event):
+        self.date_entry.delete(0, tk.END)
+        self.date_entry.config(fg="black")
+    def clear_cont_num_text(self, event):
         self.date_entry.delete(0, tk.END)
         self.date_entry.config(fg="black")
 
