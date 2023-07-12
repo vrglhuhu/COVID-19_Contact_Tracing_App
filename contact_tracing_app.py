@@ -17,7 +17,7 @@ def main_window():
     window.eval('tk::PlaceWindow . center')
 
     # Set the background image
-    image_path = r"C:\Users\Chean vergel\Pictures\Saved Pictures\papers.co-vx94-simple-architecture-blue-pattern-background-35-3840x2160-4k-wallpaper.jpg"
+    image_path = r"C:\Users\Chean vergel\Pictures\Contact Tracing Images\covid- 19.png"
     image = Image.open(image_path)
     photo = ImageTk.PhotoImage(image)
     
@@ -26,10 +26,10 @@ def main_window():
 
     # Create buttons for adding and searching
     add_button = tk.Button(window, text="Add", command=add_action)
-    add_button.place(x=520, y=230, width=100, height=30)
+    add_button.place(x=640, y=230, width=100, height=30)
 
     search_button = tk.Button(window, text="Search", command=search_action)
-    search_button.place(x=535, y=290, width=100, height=30)
+    search_button.place(x=640, y=265, width=100, height=30)
     
     # Start the main loop
     window.mainloop()
