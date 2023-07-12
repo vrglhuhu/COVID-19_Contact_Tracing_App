@@ -56,12 +56,12 @@ class AddFrame(tk.Frame):
         self.bday_entry.config(bg="#BAF8FA")
 
         # Birthday Input
-        self.age_entry = tk.Entry(self, width=36)
-        self.age_entry.place(x=90, y= 100)
+        self.bday_entry = tk.Entry(self, width=36)
+        self.bday_entry.place(x=90, y= 100)
         # Set initial text
-        self.age_entry.insert(0, "MM/DD/YYYY")  
-        self.age_entry.bind("<FocusIn>", self.clear_bday_text)
-        self.age_entry.config(fg="gray")
+        self.bday_entry.insert(0, "MM/DD/YYYY")  
+        self.bday_entry.bind("<FocusIn>", self.clear_bday_text)
+        self.bday_entry.config(fg="gray")
 
         # Date
         self.date = tk.Label(self, text="DATE ", height=1, font=("Arial", 8))
