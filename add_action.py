@@ -19,15 +19,38 @@ class AddFrame(tk.Frame):
         self.background_label = tk.Label(self, image=self.add_photo)
         self.background_label.place(x=0, y=0, relwidth=1, relheight=1)
 
-        # Information label
-        self.info = tk.Label(self, text="BASIC INFORMATION.", height=1, font=("Source Sans Pro", 8))
+        # BasicInformation label
+        self.info = tk.Label(self, text="BASIC INFORMATION.", height=1, font=("Arial", 8))
         self.info.place(x=15, y=10)
         self.info.config(bg="#20c997")
 
+        # Name
+        self.name = tk.Label(self, text="NAME: ", height=1, font=("Arial", 8))
+        self.name.place(x=15, y=40)
+        self.name.config(bg="#BAF8FA")
+
+        # Age
+        self.age = tk.Label(self, text="AGE: ", height=1, font=("Arial", 8))
+        self.age.place(x=15, y=70)
+        self.age.config(bg="#BAF8FA")
+
+        # Birthday
+        self.bday = tk.Label(self, text="BIRTHDAY: ", height=1, font=("Arial", 8))
+        self.bday.place(x=15, y=100)
+        self.bday.config(bg="#BAF8FA")
+
         # Date
-        self.date = tk.Label(self, text="Date", height=1, font=("Source Sans Pro", 7))
-        self.date.place(x=30, y=40)
+        self.date = tk.Label(self, text="DATE ", height=1, font=("Arial", 8))
+        self.date.place(x=15, y=130)
         self.date.config(bg="#BAF8FA")
+
+        # Contact Information label
+        
+
+ 
+
+
+
 
 
 
