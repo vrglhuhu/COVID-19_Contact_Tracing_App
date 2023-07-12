@@ -165,6 +165,17 @@ class AddFrame(tk.Frame):
         self.relation_entry.bind("<FocusIn>", self.clear_relation_ad_text)
         self.relation_entry.config(fg="gray")
 
+        # Create a boundary line
+        self.boundary = tk.Label(self,text = "<>" * 72, font=("Arial", 6))
+        self.boundary.place(x=15, y=160)
+        self.boundary.config(fg="#000000", bg="#659c55")
+
+
+
+
+
+
+
 
 
 
