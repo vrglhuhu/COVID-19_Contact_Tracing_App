@@ -231,24 +231,61 @@ class AddFrame(tk.Frame):
         self.relative_no_radio.config(bg="#B3FFA8")
 
         # Create Health Declaration Label
+        self.health_declaration = tk.Label(self, text="HEALTH DECLARATION ", height=1, font=("Arial", 8))
+        self.health_declaration.place(x=380, y=185)
+        self.health_declaration.config(bg="#20c997")
+
         # Ask if the user have been vaccinated for Covid 19
+        self.relative_label = tk.Label(self, text="Are you already vaccinated for Covid-19?", font=("Arial", 8))
+        self.relative_label.place(x=380, y=210)
+        self.relative_label.config(bg="#BAF8FA")
+
+        # Create the vaccine choice variable
+        self.vaccine_choice = tk.StringVar()
+
+        # Create choice 1
+        self.vaccine_choice1_radio = tk.Radiobutton(self, text="1st Dose", font=("Arial", 8), variable=self.relative_choice, value="yes")
+        self.vaccine_choice1_radio.place(x=400, y=235)
+        self.vaccine_choice1_radio.config(bg="#B3FFA8")
+
+        # Create choice 2
+        self.vaccine_choice2_radio = tk.Radiobutton(self, text="2nd Dose", font=("Arial", 8), variable=self.relative_choice, value="no")
+        self.vaccine_choice2_radio.place(x=490, y=235)
+        self.vaccine_choice2_radio.config(bg="#B3FFA8")
+
+        # Create choice 3
+        self.vaccine_choice3_radio = tk.Radiobutton(self, text="1st Booster Shot", font=("Arial", 8), variable=self.relative_choice, value="no")
+        self.vaccine_choice3_radio.place(x=585, y=235)
+        self.vaccine_choice3_radio.config(bg="#B3FFA8")
+
+        # Create choice 4
+        self.vaccine_choice4_radio = tk.Radiobutton(self, text="2nd Booster Shot", font=("Arial", 8), variable=self.relative_choice, value="no")
+        self.vaccine_choice4_radio.place(x=725, y=235)
+        self.vaccine_choice4_radio.config(bg="#B3FFA8")
+
+        # Create choice 5
+        self.vaccine_choice5_radio = tk.Radiobutton(self, text="Not Yet", font=("Arial", 8), variable=self.relative_choice, value="no")
+        self.vaccine_choice5_radio.place(x=400, y=265)
+        self.vaccine_choice5_radio.config(bg="#B3FFA8")
+
         # Ask if user has symptoms in the past 7 days
+        self.symptoms_label = tk.Label(self, text="Do you have any symptoms in the past 7 days?", font=("Arial", 8))
+        self.symptoms_label.place(x=380, y=290)
+        self.symptoms_label.config(bg="#BAF8FA")
+
+        # Create Yes Radiobuttons
+        self.symptoms_yes_radio = tk.Radiobutton(self, text="Yes", font=("Arial", 8), variable=self.relative_choice, value="yes")
+        self.symptoms_yes_radio.place(x=400, y=310)
+        self.symptoms_yes_radio.config(bg="#B3FFA8")
+
+        # Create No Radiobuttons
+        self.symptoms_yes_radio = tk.Radiobutton(self, text="No", font=("Arial", 8), variable=self.relative_choice, value="no")
+        self.symptoms_yes_radio.place(x=470, y=310)
+        self.symptoms_yes_radio.config(bg="#B3FFA8")
+
         # Ask if the user has an exposure to a confirmed covid patient
-        # Ask if the user has a contact to a person who has a symptoms of Covid 19 in the past 7 days
+        
         # Ask if the user have been tested for Covid-19 in the past 14 day
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
