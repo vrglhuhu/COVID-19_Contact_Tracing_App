@@ -2,9 +2,45 @@
 # Covid 19 Contact Tracing App
 
 # Import tkinter
-# create add action
-# create search action
+import tkinter as tk
+from PIL import ImageTk, Image
+
+# Create add action
+def add_action():
+    # Add action logic goes here
+    pass
+
+# Create search action
+def search_action():
+    # Search action logic goes here
+    pass
+
 # Create the main window
-# Set the background image
-# Create buttons for adding and searching
-# Start the main loop
+def main_window():
+    window = tk.Tk()
+    window.title("CHEAN VERGEL")
+
+    # Set the window size and position it in the center of the screen
+    window.geometry("900x500")
+    window.resizable(False, False)
+    window.eval('tk::PlaceWindow . center')
+
+    # Set the background image
+    image_path = r"C:\Users\Chean vergel\Pictures\Saved Pictures\papers.co-vx94-simple-architecture-blue-pattern-background-35-3840x2160-4k-wallpaper.jpg"
+    image = Image.open(image_path)
+    photo = ImageTk.PhotoImage(image)
+    image_label = tk.Label(window, image=photo)
+    image_label.pack()
+
+    # Create buttons for adding and searching
+    add_button = tk.Button(window, text="Add", command=add_action)
+    add_button.place(x=150, y=100, width=100, height=30)
+
+    search_button = tk.Button(window, text="Search", command=search_action)
+    search_button.place(x=150, y=150, width=100, height=30)
+
+    # Start the main loop
+    window.mainloop()
+
+# Call the main_window function to run the application
+main_window()
