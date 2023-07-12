@@ -8,7 +8,7 @@ from PIL import ImageTk, Image
 # Create the main window
 def main_window():
     window = tk.Tk()
-    window.title("CHEAN VERGEL")
+    window.title("COVID-19 CONTACT TRACING APP")
 
     # Set the window size and position it in the center of the screen
     window.geometry("900x500")
