@@ -108,7 +108,64 @@ class AddFrame(tk.Frame):
         self.email_ad_entry.config(fg="gray")
 
 
-    
+        # Emergency Information Label
+        self.emergency_info = tk.Label(self, text="EMERGENCY INFORMATION.", height=1, font=("Arial", 8))
+        self.emergency_info.place(x=325, y=70)
+        self.emergency_info.config(bg="#20c997")
+
+        # Name
+        self.name_entry = tk.Label(self, text="NAME : ", height=1, font=("Arial", 8))
+        self.name_entry.place(x=325, y=100)
+        self.name_entry.config(bg="#BAF8FA")
+
+        # Name input
+        self.name_entry = tk.Entry(self, width=30)
+        self.name_entry.place(x=380, y= 100)
+        # Set initial text
+        self.name_entry.insert(0, "FIRSTNAME/LASTNAME/SURNAME")  
+        self.name_entry.bind("<FocusIn>", self.clear_name_text)
+        self.name_entry.config(fg="gray")
+
+        # Contact number
+        self.cont_num = tk.Label(self, text="CONTACT NUMBER: ", height=1, font=("Arial", 8))
+        self.cont_num.place(x=325, y=130)
+        self.cont_num.config(bg="#BAF8FA")
+
+        # Contact Number Input
+        self.cont_num_entry = tk.Entry(self, width=15)
+        self.cont_num_entry.place(x=458, y= 130)
+        # Set initial text
+        self.cont_num_entry.insert(0, "09*********")  
+        self.cont_num_entry.bind("<FocusIn>", self.clear_cont_num_text)
+        self.cont_num_entry.config(fg="gray")
+
+        # Email Address
+        self.age = tk.Label(self, text="EMAIL ADDRESS: ", height=1, font=("Arial", 8))
+        self.age.place(x=590, y=130)
+        self.age.config(bg="#BAF8FA")
+
+        # Email Address Input
+        self.email_ad_entry = tk.Entry(self, width=22)
+        self.email_ad_entry.place(x=705, y= 130)
+        # Set initial text
+        self.email_ad_entry.insert(0, "carlomanuel@gmail.com")  
+        self.email_ad_entry.bind("<FocusIn>", self.clear_email_ad_text)
+        self.email_ad_entry.config(fg="gray")
+
+        # Relationship
+        self.relation_entry = tk.Label(self, text="RELATIONSHIP : ", height=1, font=("Arial", 8))
+        self.relation_entry.place(x=630, y=100)
+        self.relation_entry.config(bg="#BAF8FA")
+
+        # Relationship input
+        self.relation_entry = tk.Entry(self, width=19)
+        self.relation_entry.place(x=730, y= 100)
+        # Set initial text
+        self.relation_entry.insert(0, "MOTHER/FATHER etc")  
+        self.relation_entry.bind("<FocusIn>", self.clear_relation_ad_text)
+        self.relation_entry.config(fg="gray")
+
+
 
 
 
@@ -140,6 +197,9 @@ class AddFrame(tk.Frame):
     def clear_email_ad_text(self, event):
         self.email_ad_entry.delete(0, tk.END)
         self.email_ad_entry.config(fg="black")
+    def clear_relation_ad_text(self, event):
+        self.relation_entry.delete(0, tk.END)
+        self.relation_entry.config(fg="black")
 
         
 
