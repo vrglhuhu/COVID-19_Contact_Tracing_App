@@ -5,6 +5,7 @@
 import tkinter as tk
 from PIL import ImageTk, Image
 
+
 # Create the main window
 def main_window():
     window = tk.Tk()
@@ -29,18 +30,19 @@ def main_window():
 
     search_button = tk.Button(window, text="Search", command=search_action)
     search_button.place(x=535, y=290, width=100, height=30)
-
-    # Create add action
-    def add_action():
-        # Add action logic goes here
-        pass
-
-    # Create search action
-    def search_action():
-        # Search action logic goes here
-        pass    
     
     # Start the main loop
     window.mainloop()
+
+# Create add action
+def add_action():
+    # Add action logic goes here
+    pass
+
+# Create search action
+def search_action():
+    # Search action logic goes here
+    pass    
+    
 # Call the main_window function to run the application
 main_window()
