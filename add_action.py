@@ -172,9 +172,63 @@ class AddFrame(tk.Frame):
 
 
         # Create Travel Declaration Label
+        self.travel_declaration = tk.Label(self, text="TRAVEL DECLARATION ", height=1, font=("Arial", 8))
+        self.travel_declaration.place(x=15, y=185)
+        self.travel_declaration.config(bg="#20c997")
+
         # Ask if the user travelled abroad
+        self.travel_label = tk.Label(self, text="Have you traveled abroad in the last 7 days?", font=("Arial", 8))
+        self.travel_label.place(x=15, y=210)
+        self.travel_label.config(bg="#BAF8FA")
+
+        # Create the travel choice variable
+        self.travel_choice = tk.StringVar()
+        
+        # Create Yes Radiobuttons
+        self.yes_radio = tk.Radiobutton(self, text="Yes", font=("Arial", 8), variable=self.travel_choice, value="yes")
+        self.yes_radio.place(x=35, y=235)
+        self.yes_radio.config(bg="#B3FFA8")
+
+        # Create No Radiobuttons
+        self.no_radio = tk.Radiobutton(self, text="No", font=("Arial", 8), variable=self.travel_choice, value="no")
+        self.no_radio.place(x=100, y=235)
+        self.no_radio.config(bg="#B3FFA8")
+        
         # Ask if the user is near in a where there is a local tranmission
+        self.transmission_label = tk.Label(self, text="Are you near an area with local transmission?", font=("Arial", 8))
+        self.transmission_label.place(x=15, y=260)
+        self.transmission_label.config(bg="#BAF8FA")
+
+        # Create the local transmission choice variable
+        self.transmission_choice = tk.StringVar()
+
+        # Create Yes Radiobutton for local transmission
+        self.transmission_yes_radio = tk.Radiobutton(self, text="Yes", font=("Arial", 8), variable=self.transmission_choice, value="yes")
+        self.transmission_yes_radio.place(x=35, y=285)
+        self.transmission_yes_radio.config(bg="#B3FFA8")
+
+        # Create No Radiobutton for local transmission
+        self.transmission_no_radio = tk.Radiobutton(self, text="No", font=("Arial", 8), variable=self.transmission_choice, value="no")
+        self.transmission_no_radio.place(x=100, y=285)
+        self.transmission_no_radio.config(bg="#B3FFA8")
+
         # Ask if the user has relative came from other country
+        self.relative_label = tk.Label(self, text="Do you have a relative who came from another country?", font=("Arial", 8))
+        self.relative_label.place(x=15, y=310)
+        self.relative_label.config(bg="#BAF8FA")
+
+        # Create the relative choice variable
+        self.relative_choice = tk.StringVar()
+
+        # Create Yes Radiobuttons
+        self.relative_yes_radio = tk.Radiobutton(self, text="Yes", font=("Arial", 8), variable=self.relative_choice, value="yes")
+        self.relative_yes_radio.place(x=35, y=335)
+        self.relative_yes_radio.config(bg="#B3FFA8")
+
+        # Create No Radiobuttons
+        self.relative_no_radio = tk.Radiobutton(self, text="No", font=("Arial", 8), variable=self.relative_choice, value="no")
+        self.relative_no_radio.place(x=100, y=335)
+        self.relative_no_radio.config(bg="#B3FFA8")
 
         # Create Health Declaration Label
         # Ask if the user have been vaccinated for Covid 19
