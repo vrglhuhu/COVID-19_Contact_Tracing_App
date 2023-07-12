@@ -171,6 +171,18 @@ class AddFrame(tk.Frame):
         self.boundary.config(fg="#000000", bg="#659c55")
 
 
+        # Create Travel Declaration Label
+        # Ask if the user travelled abroad
+        # Ask if the user is near in a where there is a local tranmission
+        # Ask if the user has relative came from other country
+
+        # Create Health Declaration Label
+        # Ask if the user have been vaccinated for Covid 19
+        # Ask if user has symptoms in the past 7 days
+        # Ask if the user has an exposure to a confirmed covid patient
+        # Ask if the user has a contact to a person who has a symptoms of Covid 19 in the past 7 days
+        # Ask if the user have been tested for Covid-19 in the past 14 day
+
 
 
 
