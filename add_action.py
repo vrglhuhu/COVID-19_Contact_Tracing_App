@@ -7,8 +7,8 @@ from PIL import ImageTk, Image
 
 # Create a class for add 
 class AddFrame(tk.Frame):
-    def __init__(self):
-        tk.Frame.__init__(self)
+    def __init__(self, master=None):
+        tk.Frame.__init__(self, master)
 
         # Set the background image
         self.add_image_path = r"C:\Users\Chean vergel\Pictures\Contact Tracing Images\covid- 19 second.png"
@@ -29,22 +29,75 @@ class AddFrame(tk.Frame):
         self.name.place(x=15, y=40)
         self.name.config(bg="#BAF8FA")
 
+        # Name Input
+        self.name_entry = tk.Entry(self, width=40)
+        self.name_entry.place(x=60, y= 40)
+        # Set initial text
+        self.name_entry.insert(0, "FIRSTNAME/LASTNAME/SURNAME")  
+        self.name_entry.bind("<FocusIn>", self.clear_name_text)
+        self.name_entry.config(fg="gray")
+
         # Age
         self.age = tk.Label(self, text="AGE: ", height=1, font=("Arial", 8))
         self.age.place(x=15, y=70)
         self.age.config(bg="#BAF8FA")
 
+        # Age Input
+        self.age_entry = tk.Entry(self, width=40)
+        self.age_entry.place(x=58, y= 70)
+        # Set initial text
+        self.age_entry.insert(0, "Your Age")  
+        self.age_entry.bind("<FocusIn>", self.clear_age_text)
+        self.age_entry.config(fg="gray")
+
         # Birthday
-        self.bday = tk.Label(self, text="BIRTHDAY: ", height=1, font=("Arial", 8))
-        self.bday.place(x=15, y=100)
-        self.bday.config(bg="#BAF8FA")
+        self.bday_entry = tk.Label(self, text="BIRTHDAY: ", height=1, font=("Arial", 8))
+        self.bday_entry.place(x=15, y=100)
+        self.bday_entry.config(bg="#BAF8FA")
+
+        # Birthday Input
+        self.age_entry = tk.Entry(self, width=36)
+        self.age_entry.place(x=90, y= 100)
+        # Set initial text
+        self.age_entry.insert(0, "MM/DD/YYYY")  
+        self.age_entry.bind("<FocusIn>", self.clear_bday_text)
+        self.age_entry.config(fg="gray")
 
         # Date
         self.date = tk.Label(self, text="DATE ", height=1, font=("Arial", 8))
         self.date.place(x=15, y=130)
         self.date.config(bg="#BAF8FA")
 
+        # Date Input
+        self.date_entry = tk.Entry(self, width=40)
+        self.date_entry.place(x=58, y= 130)
+        # Set initial text
+        self.date_entry.insert(0, "MM/DD/YYYY")  
+        self.date_entry.bind("<FocusIn>", self.clear_date_text)
+        self.date_entry.config(fg="gray")
+
         # Contact Information label
+
+
+
+
+
+
+    # Display text will be gone if the user click the entry
+
+    def clear_name_text(self, event):
+        self.name_entry.delete(0, tk.END)
+        self.name_entry.config(fg="black")
+    def clear_age_text(self, event):
+        self.age_entry.delete(0, tk.END)
+        self.age_entry.config(fg="black")
+    def clear_bday_text(self, event):
+        self.bday_entry.delete(0, tk.END)
+        self.bday_entry.config(fg="black")
+    def clear_date_text(self, event):
+        self.date_entry.delete(0, tk.END)
+        self.date_entry.config(fg="black")
+
         
 
  

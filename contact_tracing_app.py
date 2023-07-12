@@ -16,7 +16,6 @@ class FirstPage():
         # Set the window size and position it in the center of the screen
         window.geometry("900x500")
         window.resizable(False, False)
-        window.eval('tk::PlaceWindow . center')
 
         # Set the background image
         image_path = r"C:\Users\Chean vergel\Pictures\Contact Tracing Images\covid- 19.png"
@@ -35,7 +34,7 @@ class FirstPage():
         
         # Start the main loop
         window.mainloop()
-        
+
     # Create add action
     def add_action():
         # Add action logic goes here
