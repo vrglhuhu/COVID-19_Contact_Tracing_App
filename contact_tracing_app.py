@@ -5,7 +5,6 @@
 import tkinter as tk
 from PIL import ImageTk, Image
 
-
 # Create the main window
 def main_window():
     window = tk.Tk()
