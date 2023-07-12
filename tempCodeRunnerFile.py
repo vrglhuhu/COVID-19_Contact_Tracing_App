@@ -1,1 +1,0 @@
-C:\Users\Chean vergel\Pictures\Contact Tracing Images\covid- 19.png
