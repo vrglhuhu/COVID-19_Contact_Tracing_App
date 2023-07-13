@@ -5,9 +5,7 @@
 import csv
 import tkinter as tk
 from PIL import ImageTk, Image
-from close_contact_window import CloseContactWind
 from suspected_contact_window import SuspectedContactWind
-from positive_case_window import PositiveCaseWind
 from safe_case_window import SafeCaseWind
 
 
@@ -370,40 +368,25 @@ class AddFrame(tk.Frame):
                              travel, transmission, relative, vaccine, symptoms, exposure, tested])
            
             # Create notification for user
-            if transmission == "Yes":
-                # Display the window for close contact
-                window1 = CloseContactWind(self.master)
-                window1.pack(fill="both", expand=True)
-            elif exposure == "Yes":
-                # Display the window for close contact
-                window1 = CloseContactWind(self.master)
-                window1.pack(fill="both", expand=True)
-            elif travel == "Yes":
-                # Display the window suspected close contact
-                window2 = SuspectedContactWind(self.master)
-                window2.pack(fill="both", expand=True)
-            elif symptoms == "Yes":
-                # Display the window suspected close contact
-                window2 = SuspectedContactWind(self.master)
-                window2.pack(fill="both", expand=True)
-            elif travel == "Yes":
-                # Display the window suspected close contact
-                window2 = SuspectedContactWind(self.master)
-                window2.pack(fill="both", expand=True)
-            elif relative == "Yes":
-                # Display the window suspected close contact
-                window2 = SuspectedContactWind(self.master)
-                window2.pack(fill="both", expand=True)
-            elif tested == "Yes":
-                # Display that you are a covid positive
-                window3 = PositiveCaseWind(self.master)
-                window3.pack(fill="both", expand=True)
-
-
-            else:
+            if travel == "No" and relative == "No" and symptoms == "No" and transmission == "No" and exposure == "No":
                 # Display that you are not a close contact and not a covid positive
                 window4 = SafeCaseWind(self.master)
                 window4.pack(fill="both", expand=True)
+            else:
+                # Display the window suspected close contact
+                window2 = SuspectedContactWind(self.master)
+                window2.pack(fill="both", expand=True)
+
+
+
+
+
+             
+
+
+
+
+
             
     
         
