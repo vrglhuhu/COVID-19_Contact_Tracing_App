@@ -114,43 +114,43 @@ class AddFrame(tk.Frame):
         self.emergency_info.config(bg="#20c997")
 
         # Name
-        self.name_entry = tk.Label(self, text="NAME : ", height=1, font=("Arial", 8))
-        self.name_entry.place(x=325, y=100)
-        self.name_entry.config(bg="#BAF8FA")
+        self.emer_name_entry = tk.Label(self, text="NAME : ", height=1, font=("Arial", 8))
+        self.emer_name_entry.place(x=325, y=100)
+        self.emer_name_entry.config(bg="#BAF8FA")
 
         # Name input
-        self.name_entry = tk.Entry(self, width=30)
-        self.name_entry.place(x=380, y= 100)
+        self.emer_name_entry = tk.Entry(self, width=30)
+        self.emer_name_entry.place(x=380, y= 100)
         # Set initial text
-        self.name_entry.insert(0, "FIRSTNAME/LASTNAME/SURNAME")  
-        self.name_entry.bind("<FocusIn>", self.clear_name_text)
-        self.name_entry.config(fg="gray")
+        self.emer_name_entry.insert(0, "FIRSTNAME/LASTNAME/SURNAME")  
+        self.emer_name_entry.bind("<FocusIn>", self.clear_name_text)
+        self.emer_name_entry.config(fg="gray")
 
         # Contact number
-        self.cont_num = tk.Label(self, text="CONTACT NUMBER: ", height=1, font=("Arial", 8))
-        self.cont_num.place(x=325, y=130)
-        self.cont_num.config(bg="#BAF8FA")
+        self.emer_cont_num = tk.Label(self, text="CONTACT NUMBER: ", height=1, font=("Arial", 8))
+        self.emer_cont_num.place(x=325, y=130)
+        self.emer_cont_num.config(bg="#BAF8FA")
 
         # Contact Number Input
-        self.cont_num_entry = tk.Entry(self, width=15)
-        self.cont_num_entry.place(x=458, y= 130)
+        self.emer_cont_num_entry = tk.Entry(self, width=15)
+        self.emer_cont_num_entry.place(x=458, y= 130)
         # Set initial text
-        self.cont_num_entry.insert(0, "09*********")  
-        self.cont_num_entry.bind("<FocusIn>", self.clear_cont_num_text)
-        self.cont_num_entry.config(fg="gray")
+        self.emer_cont_num_entry.insert(0, "09*********")  
+        self.emer_cont_num_entry.bind("<FocusIn>", self.clear_cont_num_text)
+        self.emer_cont_num_entry.config(fg="gray")
 
         # Email Address
-        self.age = tk.Label(self, text="EMAIL ADDRESS: ", height=1, font=("Arial", 8))
-        self.age.place(x=590, y=130)
-        self.age.config(bg="#BAF8FA")
+        self.emer_email_add = tk.Label(self, text="EMAIL ADDRESS: ", height=1, font=("Arial", 8))
+        self.emer_email_add.place(x=590, y=130)
+        self.emer_email_add.config(bg="#BAF8FA")
 
         # Email Address Input
-        self.email_ad_entry = tk.Entry(self, width=22)
-        self.email_ad_entry.place(x=705, y= 130)
+        self.emer_email_add_entry = tk.Entry(self, width=22)
+        self.emer_email_add_entry.place(x=705, y= 130)
         # Set initial text
-        self.email_ad_entry.insert(0, "carlomanuel@gmail.com")  
-        self.email_ad_entry.bind("<FocusIn>", self.clear_email_ad_text)
-        self.email_ad_entry.config(fg="gray")
+        self.emer_email_add.insert(0, "carlomanuel@gmail.com")  
+        self.emer_email_add_entry.bind("<FocusIn>", self.clear_email_ad_text)
+        self.emer_email_add_entry.config(fg="gray")
 
         # Relationship
         self.relation_entry = tk.Label(self, text="RELATIONSHIP : ", height=1, font=("Arial", 8))
@@ -320,12 +320,27 @@ class AddFrame(tk.Frame):
 
     # Define the data for submit
     def submit_data(self):
-        # Get the entered data
-        name= self.name_entry.get()
-        age = self.age_entry.get()
-        birthday = self.bday_entry()
+        # Get the entered data for Basic information
+        user_name= self.name_entry.get()
+        user_age = self.age_entry.get()
+        user_birthday = self.bday_entry()
         date = self.date_entry.get()
-        contact_num = self.cont_num.get()
+
+        # Get the entered data for Contact information
+        user_contact_num = self.cont_num.get()
+        user_email = self.email_ad_entry.get()
+
+        # Get the entered data for Emergency information
+        emergency_name = self.emer_name_entry.get()
+        emergency_contact_num = self.emer_cont_num.get()
+        emergency_email = self.emer_email_add_entry.get()
+        relationship = self.relation_entry.get()
+
+        # Get the entered data for Travel Declaration
+
+
+        # Get the entered data for Health Declaration
+
 
 
 
