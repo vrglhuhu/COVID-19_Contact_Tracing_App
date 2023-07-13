@@ -19,3 +19,10 @@ class PositiveCaseWind(tk.Frame):
         self.background_label = tk.Label(self, image=self.add_photo)
         self.background_label.place(x=0, y=0, relwidth=1, relheight=1)
 
+        # Create an exit button
+        ok_button = tk.Button(self.master, text="OK", command=self.close_window, bg='#8D60FF', font=('new times roman', 12))
+        ok_button.place(x=430, y=380)
+
+    # Define the exit window. This home window will exit the program
+    def close_window(self):
+        self.master.destroy()
