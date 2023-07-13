@@ -2,9 +2,11 @@
 # Covid 19 Contact Tracing App
 
 # Import libraries
+import csv
 import tkinter as tk
 from PIL import ImageTk, Image
-import csv
+
+
 # Create a class for add 
 class AddFrame(tk.Frame):
     def __init__(self, master=None):
@@ -123,7 +125,7 @@ class AddFrame(tk.Frame):
         self.emer_name_entry.place(x=380, y= 100)
         # Set initial text
         self.emer_name_entry.insert(0, "FIRSTNAME/LASTNAME/SURNAME")  
-        self.emer_name_entry.bind("<FocusIn>", self.clear_name_text)
+        self.emer_name_entry.bind("<FocusIn>", self.clear_emer_name_text)
         self.emer_name_entry.config(fg="gray")
 
         # Contact number
@@ -136,7 +138,7 @@ class AddFrame(tk.Frame):
         self.emer_cont_num_entry.place(x=458, y= 130)
         # Set initial text
         self.emer_cont_num_entry.insert(0, "09*********")  
-        self.emer_cont_num_entry.bind("<FocusIn>", self.clear_cont_num_text)
+        self.emer_cont_num_entry.bind("<FocusIn>", self.clear_emer_cont_num_text)
         self.emer_cont_num_entry.config(fg="gray")
 
         # Email Address
@@ -148,8 +150,8 @@ class AddFrame(tk.Frame):
         self.emer_email_add_entry = tk.Entry(self, width=22)
         self.emer_email_add_entry.place(x=705, y= 130)
         # Set initial text
-        self.emer_email_add.insert(0, "carlomanuel@gmail.com")  
-        self.emer_email_add_entry.bind("<FocusIn>", self.clear_email_ad_text)
+        self.emer_email_add_entry.insert(0, "carlomanuel@gmail.com")  
+        self.emer_email_add_entry.bind("<FocusIn>", self.clear_emer_email_add_text)
         self.emer_email_add_entry.config(fg="gray")
 
         # Relationship
@@ -185,12 +187,12 @@ class AddFrame(tk.Frame):
         self.travel_choice = tk.StringVar()
         
         # Create Yes Radiobuttons
-        self.yes_radio = tk.Radiobutton(self, text="Yes", font=("Arial", 8), variable=self.travel_choice1, value="yes")
+        self.yes_radio = tk.Radiobutton(self, text="Yes", font=("Arial", 8), variable=self.travel_choice, value="yes")
         self.yes_radio.place(x=35, y=235)
         self.yes_radio.config(bg="#B3FFA8")
 
         # Create No Radiobuttons
-        self.no_radio = tk.Radiobutton(self, text="No", font=("Arial", 8), variable=self.travel_choice2, value="no")
+        self.no_radio = tk.Radiobutton(self, text="No", font=("Arial", 8), variable=self.travel_choice, value="no")
         self.no_radio.place(x=100, y=235)
         self.no_radio.config(bg="#B3FFA8")
         
@@ -244,27 +246,27 @@ class AddFrame(tk.Frame):
         self.vaccine_choice = tk.StringVar()
 
         # Create choice 1
-        self.vaccine_choice1_radio = tk.Radiobutton(self, text="1st Dose", font=("Arial", 8), variable=self.vaccine_choice, value="yes")
+        self.vaccine_choice1_radio = tk.Radiobutton(self, text="1st Dose", font=("Arial", 8), variable=self.vaccine_choice, value="1")
         self.vaccine_choice1_radio.place(x=400, y=235)
         self.vaccine_choice1_radio.config(bg="#B3FFA8")
 
         # Create choice 2
-        self.vaccine_choice2_radio = tk.Radiobutton(self, text="2nd Dose", font=("Arial", 8), variable=self.vaccine_choice, value="no")
+        self.vaccine_choice2_radio = tk.Radiobutton(self, text="2nd Dose", font=("Arial", 8), variable=self.vaccine_choice, value="2")
         self.vaccine_choice2_radio.place(x=490, y=235)
         self.vaccine_choice2_radio.config(bg="#B3FFA8")
 
         # Create choice 3
-        self.vaccine_choice3_radio = tk.Radiobutton(self, text="1st Booster Shot", font=("Arial", 8), variable=self.vaccine_choice, value="no")
+        self.vaccine_choice3_radio = tk.Radiobutton(self, text="1st Booster Shot", font=("Arial", 8), variable=self.vaccine_choice, value="3")
         self.vaccine_choice3_radio.place(x=585, y=235)
         self.vaccine_choice3_radio.config(bg="#B3FFA8")
 
         # Create choice 4
-        self.vaccine_choice4_radio = tk.Radiobutton(self, text="2nd Booster Shot", font=("Arial", 8), variable=self.vaccine_choice, value="no")
+        self.vaccine_choice4_radio = tk.Radiobutton(self, text="2nd Booster Shot", font=("Arial", 8), variable=self.vaccine_choice, value="4")
         self.vaccine_choice4_radio.place(x=725, y=235)
         self.vaccine_choice4_radio.config(bg="#B3FFA8")
 
         # Create choice 5
-        self.vaccine_choice5_radio = tk.Radiobutton(self, text="Not Yet", font=("Arial", 8), variable=self.vaccine_choice, value="no")
+        self.vaccine_choice5_radio = tk.Radiobutton(self, text="Not Yet", font=("Arial", 8), variable=self.vaccine_choice, value="5")
         self.vaccine_choice5_radio.place(x=400, y=265)
         self.vaccine_choice5_radio.config(bg="#B3FFA8")
 
@@ -300,7 +302,7 @@ class AddFrame(tk.Frame):
         self.exposure_yes_radio.config(bg="#B3FFA8")
 
         # Create No Radiobuttons
-        self.exposure_no_radio = tk.Radiobutton(self, text="No", font=("Arial", 8), variable=self.exposure_choice, value="yes")
+        self.exposure_no_radio = tk.Radiobutton(self, text="No", font=("Arial", 8), variable=self.exposure_choice, value="no")
         self.exposure_no_radio.place(x=470, y=375)
         self.exposure_no_radio.config(bg="#B3FFA8")
 
@@ -318,13 +320,13 @@ class AddFrame(tk.Frame):
         self.tested_yes_radio.config(bg="#B3FFA8")
 
         # Create No Radiobuttons
-        self.tested_No_radio = tk.Radiobutton(self, text="No", font=("Arial", 8), variable=self.tested_choice, value="yes")
+        self.tested_No_radio = tk.Radiobutton(self, text="No", font=("Arial", 8), variable=self.tested_choice, value="no")
         self.tested_No_radio.place(x=470, y=430)
         self.tested_No_radio.config(bg="#B3FFA8")
 
         # Create Submit Button
-        submit_button = tk.Botton(self.addbutton, text="SUBMIT", command= self.submit_data, bg="green")
-        submit_button.place(x=15, y=540)
+        submit_button = tk.Button(self, text="SUBMIT", command= self.submit_data, bg="green")
+        submit_button.place(x=35, y=400)
 
 
     # Define the data for submit
@@ -332,16 +334,16 @@ class AddFrame(tk.Frame):
         # Get the entered data for Basic information
         user_name = self.name_entry.get()
         user_age = self.age_entry.get()
-        user_birthday = self.bday_entry()
+        user_birthday = self.bday_entry.get()
         date = self.date_entry.get()
 
         # Get the entered data for Contact information
-        user_contact_num = self.cont_num.get()
+        user_contact_num = self.cont_num_entry.get()
         user_email = self.email_ad_entry.get()
 
         # Get the entered data for Emergency information
         emergency_name = self.emer_name_entry.get()
-        emergency_contact_num = self.emer_cont_num.get()
+        emergency_contact_num = self.emer_cont_num_entry.get()
         emergency_email = self.emer_email_add_entry.get()
         relationship = self.relation_entry.get()
 
@@ -357,12 +359,12 @@ class AddFrame(tk.Frame):
         tested = self.tested_choice.get()
 
         # Save the file using CVS
-        with open('.csv', 'a', newline='') as file:
+        with open('entry.csv', 'a', newline='') as file:
             writer = csv.writer(file)
             writer.writerow([user_name, user_age, user_birthday, date, user_contact_num, user_email, 
                              emergency_name, emergency_contact_num, emergency_email, relationship,  
                              travel, transmission, relative, vaccine, symptoms, exposure, tested])
-
+            
 
     # Display text will be gone if the user click the entry
 
@@ -387,10 +389,18 @@ class AddFrame(tk.Frame):
     def clear_relation_ad_text(self, event):
         self.relation_entry.delete(0, tk.END)
         self.relation_entry.config(fg="black")
+    def clear_emer_name_text(self, event):
+        self.emer_name_entry.delete(0, tk.END)
+        self.emer_name_entry.config(fg="black")
+    def clear_emer_cont_num_text(self, event):
+        self.emer_cont_num_entry.delete(0, tk.END)
+        self.emer_cont_num_entry.config(fg="black")
+    def clear_emer_email_add_text(self, event):
+        self.emer_email_add_entry.delete(0, tk.END)
+        self.emer_email_add_entry.config(fg="black")
 
         
 
- 
 
 
 
