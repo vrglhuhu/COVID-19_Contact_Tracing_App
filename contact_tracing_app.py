@@ -5,7 +5,7 @@
 import tkinter as tk
 from PIL import ImageTk, Image
 from add_action import AddFrame
-
+from search_action import SearchFrame
 
 # Create the main window
 class FirstPage():
@@ -44,7 +44,8 @@ class FirstPage():
     # Create search action
     def search_action():
         # Search action logic goes here
-        pass    
+        search_frame = SearchFrame()
+        search_frame.place(x=0, y=0, relwidth=1, relheight=1)
         
 # Create an instance of the FirstPage class and call the main_window function
 FirstPage.main_window()

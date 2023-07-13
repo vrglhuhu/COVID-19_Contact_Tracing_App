@@ -5,16 +5,19 @@
 import tkinter as tk
 from PIL import ImageTk, Image
 
-# Create a class for add 
-class SafeCaseWind(tk.Frame):
+# Create a class for last frame
+class LastFrame(tk.Frame):
     def __init__(self, master=None):
         tk.Frame.__init__(self, master)
 
+        self.label = tk.Label(self, text="SAFE CASE")
+        self.label.pack(pady=20)
+
         # Set the background image
-        self.add_safe_case_wind_path = r"C:\Users\Chean vergel\Pictures\Contact Tracing Images\4.png"
-        self.add_safe_case_wind = Image.open(self.add_safe_case_wind_path)
-        self.add_safe_case_wind = self.add_safe_case_wind.resize((900, 500), Image.NEAREST)
-        self.add_photo = ImageTk.PhotoImage(self.add_safe_case_wind)
+        self.add_responded_path = r"C:\Users\Chean vergel\Pictures\Contact Tracing Images\last frame.png"
+        self.add_responded = Image.open(self.add_responded_path)
+        self.add_responded = self.add_responded.resize((900, 500), Image.NEAREST)
+        self.add_photo = ImageTk.PhotoImage(self.add_responded)
 
         self.background_label = tk.Label(self, image=self.add_photo)
         self.background_label.place(x=0, y=0, relwidth=1, relheight=1)
