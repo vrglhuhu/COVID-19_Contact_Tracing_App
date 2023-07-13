@@ -270,25 +270,72 @@ class AddFrame(tk.Frame):
 
         # Ask if user has symptoms in the past 7 days
         self.symptoms_label = tk.Label(self, text="Do you have any symptoms in the past 7 days?", font=("Arial", 8))
-        self.symptoms_label.place(x=380, y=290)
+        self.symptoms_label.place(x=380, y=295)
         self.symptoms_label.config(bg="#BAF8FA")
 
         # Create Yes Radiobuttons
         self.symptoms_yes_radio = tk.Radiobutton(self, text="Yes", font=("Arial", 8), variable=self.relative_choice, value="yes")
-        self.symptoms_yes_radio.place(x=400, y=310)
+        self.symptoms_yes_radio.place(x=400, y=320)
         self.symptoms_yes_radio.config(bg="#B3FFA8")
 
         # Create No Radiobuttons
-        self.symptoms_yes_radio = tk.Radiobutton(self, text="No", font=("Arial", 8), variable=self.relative_choice, value="no")
-        self.symptoms_yes_radio.place(x=470, y=310)
-        self.symptoms_yes_radio.config(bg="#B3FFA8")
+        self.symptoms_no_radio = tk.Radiobutton(self, text="No", font=("Arial", 8), variable=self.relative_choice, value="no")
+        self.symptoms_no_radio.place(x=470, y=320)
+        self.symptoms_no_radio.config(bg="#B3FFA8")
 
         # Ask if the user has an exposure to a confirmed covid patient
-        
+        self.exposure_label = tk.Label(self, text="Do you have an exposure to a confirmed covid patient in the past 7 days?", font=("Arial", 8))
+        self.exposure_label.place(x=380, y=350)
+        self.exposure_label.config(bg="#BAF8FA")
+
+        # Create Yes Radiobuttons
+        self.exposure_yes_radio = tk.Radiobutton(self, text="Yes", font=("Arial", 8), variable=self.relative_choice, value="yes")
+        self.exposure_yes_radio.place(x=400, y=375)
+        self.exposure_yes_radio.config(bg="#B3FFA8")
+
+        # Create No Radiobuttons
+        self.exposure_no_radio = tk.Radiobutton(self, text="No", font=("Arial", 8), variable=self.relative_choice, value="yes")
+        self.exposure_no_radio.place(x=470, y=375)
+        self.exposure_no_radio.config(bg="#B3FFA8")
+
         # Ask if the user have been tested for Covid-19 in the past 14 day
+        self.tested_label = tk.Label(self, text="Have you been tested for Covid-19 in the past 14 day?", font=("Arial", 8))
+        self.tested_label.place(x=380, y=405)
+        self.tested_label.config(bg="#BAF8FA")
+
+        # Create Yes Radiobuttons
+        self.tested_yes_radio = tk.Radiobutton(self, text="Yes", font=("Arial", 8), variable=self.relative_choice, value="yes")
+        self.tested_yes_radio.place(x=400, y=430)
+        self.tested_yes_radio.config(bg="#B3FFA8")
+
+        # Create No Radiobuttons
+        self.tested_No_radio = tk.Radiobutton(self, text="No", font=("Arial", 8), variable=self.relative_choice, value="yes")
+        self.tested_No_radio.place(x=470, y=430)
+        self.tested_No_radio.config(bg="#B3FFA8")
+
+        # Create Submit Button
+        submit_button = tk.Botton(self.addbutton, text="SUBMIT", command= self.submit_data, bg="green")
+        submit_button.place(x=15, y=540)
 
 
+    # Define the data for submit
+    def submit_data(self):
+        # Get the entered data
+        name= self.name_entry.get()
+        age = self.age_entry.get()
+        birthday = self.bday_entry()
+        date = self.date_entry.get()
+        contact_num = self.cont_num.get()
+        
 
+
+        
+        
+        
+        
+        
+        
+        pass
 
 
     # Display text will be gone if the user click the entry
