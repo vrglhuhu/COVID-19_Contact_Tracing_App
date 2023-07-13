@@ -368,20 +368,44 @@ class AddFrame(tk.Frame):
             writer.writerow([user_name, user_age, user_birthday, date, user_contact_num, user_email, 
                              emergency_name, emergency_contact_num, emergency_email, relationship,  
                              travel, transmission, relative, vaccine, symptoms, exposure, tested])
+           
             # Create notification for user
-            if transmission == "Yes" and exposure == "Yes":
+            if transmission == "Yes":
                 # Display the window for close contact
-                CloseContactWind()
-            elif travel == "Yes" and symptoms == "Yes":
+                window1 = CloseContactWind(self.master)
+                window1.pack(fill="both", expand=True)
+            elif exposure == "Yes":
+                # Display the window for close contact
+                window1 = CloseContactWind(self.master)
+                window1.pack(fill="both", expand=True)
+            elif travel == "Yes":
                 # Display the window suspected close contact
-                SuspectedContactWind()
+                window2 = SuspectedContactWind(self.master)
+                window2.pack(fill="both", expand=True)
+            elif symptoms == "Yes":
+                # Display the window suspected close contact
+                window2 = SuspectedContactWind(self.master)
+                window2.pack(fill="both", expand=True)
+            elif travel == "Yes":
+                # Display the window suspected close contact
+                window2 = SuspectedContactWind(self.master)
+                window2.pack(fill="both", expand=True)
+            elif relative == "Yes":
+                # Display the window suspected close contact
+                window2 = SuspectedContactWind(self.master)
+                window2.pack(fill="both", expand=True)
             elif tested == "Yes":
                 # Display that you are a covid positive
-                PositiveCaseWind()
+                window3 = PositiveCaseWind(self.master)
+                window3.pack(fill="both", expand=True)
+
+
             else:
                 # Display that you are not a close contact and not a covid positive
-                SafeCaseWind()
-
+                window4 = SafeCaseWind(self.master)
+                window4.pack(fill="both", expand=True)
+            
+    
         
     # Display text will be gone if the user click the entry
 

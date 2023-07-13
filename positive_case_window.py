@@ -12,9 +12,10 @@ class PositiveCaseWind(tk.Frame):
 
         # Set the background image
         self.add_positive_case_wind_path = r"C:\Users\Chean vergel\Pictures\Contact Tracing Images\3.png"
-        self.add_positive_case_wind_wind = Image.open(self.add_image_path)
-        self.add_positive_case_wind_wind = self.add_image.resize((900, 500), Image.NEAREST)
-        self.add_positive_case_wind_wind= ImageTk.PhotoImage(self.add_image)
+        self.add_positive_case_wind = Image.open(self.add_positive_case_wind_path)
+        self.add_positive_case_wind = self.add_positive_case_wind.resize((900, 500), Image.NEAREST)
+        self.add_photo = ImageTk.PhotoImage(self.add_positive_case_wind)
 
         self.background_label = tk.Label(self, image=self.add_photo)
         self.background_label.place(x=0, y=0, relwidth=1, relheight=1)
+
