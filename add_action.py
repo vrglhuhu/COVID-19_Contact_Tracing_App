@@ -236,9 +236,9 @@ class AddFrame(tk.Frame):
         self.health_declaration.config(bg="#20c997")
 
         # Ask if the user have been vaccinated for Covid 19
-        self.relative_label = tk.Label(self, text="Are you already vaccinated for Covid-19?", font=("Arial", 8))
-        self.relative_label.place(x=380, y=210)
-        self.relative_label.config(bg="#BAF8FA")
+        self.vaccine_label = tk.Label(self, text="Are you already vaccinated for Covid-19?", font=("Arial", 8))
+        self.vaccine_label.place(x=380, y=210)
+        self.vaccine_label.config(bg="#BAF8FA")
 
         # Create the vaccine choice variable
         self.vaccine_choice = tk.StringVar()
@@ -346,10 +346,15 @@ class AddFrame(tk.Frame):
         relationship = self.relation_entry.get()
 
         # Get the entered data for Travel Declaration
-
+        travel = self.travel_choice.get()
+        transmission = self.transmission_choice.get()
+        relative = self.relative_choice.get()
 
         # Get the entered data for Health Declaration
-
+        vaccine = self.vaccine_choice.get()
+        symptoms = self.symptoms_choice.get()
+        exposure = self.exposure_choice.get()
+        tested = self.tested_choice.get()
 
 
 
