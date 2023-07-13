@@ -185,12 +185,12 @@ class AddFrame(tk.Frame):
         self.travel_choice = tk.StringVar()
         
         # Create Yes Radiobuttons
-        self.yes_radio = tk.Radiobutton(self, text="Yes", font=("Arial", 8), variable=self.travel_choice, value="yes")
+        self.yes_radio = tk.Radiobutton(self, text="Yes", font=("Arial", 8), variable=self.travel_choice1, value="yes")
         self.yes_radio.place(x=35, y=235)
         self.yes_radio.config(bg="#B3FFA8")
 
         # Create No Radiobuttons
-        self.no_radio = tk.Radiobutton(self, text="No", font=("Arial", 8), variable=self.travel_choice, value="no")
+        self.no_radio = tk.Radiobutton(self, text="No", font=("Arial", 8), variable=self.travel_choice2, value="no")
         self.no_radio.place(x=100, y=235)
         self.no_radio.config(bg="#B3FFA8")
         
@@ -244,27 +244,27 @@ class AddFrame(tk.Frame):
         self.vaccine_choice = tk.StringVar()
 
         # Create choice 1
-        self.vaccine_choice1_radio = tk.Radiobutton(self, text="1st Dose", font=("Arial", 8), variable=self.relative_choice, value="yes")
+        self.vaccine_choice1_radio = tk.Radiobutton(self, text="1st Dose", font=("Arial", 8), variable=self.vaccine_choice, value="yes")
         self.vaccine_choice1_radio.place(x=400, y=235)
         self.vaccine_choice1_radio.config(bg="#B3FFA8")
 
         # Create choice 2
-        self.vaccine_choice2_radio = tk.Radiobutton(self, text="2nd Dose", font=("Arial", 8), variable=self.relative_choice, value="no")
+        self.vaccine_choice2_radio = tk.Radiobutton(self, text="2nd Dose", font=("Arial", 8), variable=self.vaccine_choice, value="no")
         self.vaccine_choice2_radio.place(x=490, y=235)
         self.vaccine_choice2_radio.config(bg="#B3FFA8")
 
         # Create choice 3
-        self.vaccine_choice3_radio = tk.Radiobutton(self, text="1st Booster Shot", font=("Arial", 8), variable=self.relative_choice, value="no")
+        self.vaccine_choice3_radio = tk.Radiobutton(self, text="1st Booster Shot", font=("Arial", 8), variable=self.vaccine_choice, value="no")
         self.vaccine_choice3_radio.place(x=585, y=235)
         self.vaccine_choice3_radio.config(bg="#B3FFA8")
 
         # Create choice 4
-        self.vaccine_choice4_radio = tk.Radiobutton(self, text="2nd Booster Shot", font=("Arial", 8), variable=self.relative_choice, value="no")
+        self.vaccine_choice4_radio = tk.Radiobutton(self, text="2nd Booster Shot", font=("Arial", 8), variable=self.vaccine_choice, value="no")
         self.vaccine_choice4_radio.place(x=725, y=235)
         self.vaccine_choice4_radio.config(bg="#B3FFA8")
 
         # Create choice 5
-        self.vaccine_choice5_radio = tk.Radiobutton(self, text="Not Yet", font=("Arial", 8), variable=self.relative_choice, value="no")
+        self.vaccine_choice5_radio = tk.Radiobutton(self, text="Not Yet", font=("Arial", 8), variable=self.vaccine_choice, value="no")
         self.vaccine_choice5_radio.place(x=400, y=265)
         self.vaccine_choice5_radio.config(bg="#B3FFA8")
 
@@ -273,13 +273,16 @@ class AddFrame(tk.Frame):
         self.symptoms_label.place(x=380, y=295)
         self.symptoms_label.config(bg="#BAF8FA")
 
+        # Create the symptoms choice variable
+        self.symptoms_choice = tk.StringVar()
+
         # Create Yes Radiobuttons
-        self.symptoms_yes_radio = tk.Radiobutton(self, text="Yes", font=("Arial", 8), variable=self.relative_choice, value="yes")
+        self.symptoms_yes_radio = tk.Radiobutton(self, text="Yes", font=("Arial", 8), variable=self.symptoms_choice, value="yes")
         self.symptoms_yes_radio.place(x=400, y=320)
         self.symptoms_yes_radio.config(bg="#B3FFA8")
 
         # Create No Radiobuttons
-        self.symptoms_no_radio = tk.Radiobutton(self, text="No", font=("Arial", 8), variable=self.relative_choice, value="no")
+        self.symptoms_no_radio = tk.Radiobutton(self, text="No", font=("Arial", 8), variable=self.symptoms_choice, value="no")
         self.symptoms_no_radio.place(x=470, y=320)
         self.symptoms_no_radio.config(bg="#B3FFA8")
 
@@ -288,13 +291,16 @@ class AddFrame(tk.Frame):
         self.exposure_label.place(x=380, y=350)
         self.exposure_label.config(bg="#BAF8FA")
 
+        # Create the exposure choice variable
+        self.exposure_choice = tk.StringVar()
+
         # Create Yes Radiobuttons
-        self.exposure_yes_radio = tk.Radiobutton(self, text="Yes", font=("Arial", 8), variable=self.relative_choice, value="yes")
+        self.exposure_yes_radio = tk.Radiobutton(self, text="Yes", font=("Arial", 8), variable=self.exposure_choice, value="yes")
         self.exposure_yes_radio.place(x=400, y=375)
         self.exposure_yes_radio.config(bg="#B3FFA8")
 
         # Create No Radiobuttons
-        self.exposure_no_radio = tk.Radiobutton(self, text="No", font=("Arial", 8), variable=self.relative_choice, value="yes")
+        self.exposure_no_radio = tk.Radiobutton(self, text="No", font=("Arial", 8), variable=self.exposure_choice, value="yes")
         self.exposure_no_radio.place(x=470, y=375)
         self.exposure_no_radio.config(bg="#B3FFA8")
 
@@ -303,13 +309,16 @@ class AddFrame(tk.Frame):
         self.tested_label.place(x=380, y=405)
         self.tested_label.config(bg="#BAF8FA")
 
+        # Create the tested choice variable
+        self.tested_choice = tk.StringVar()
+
         # Create Yes Radiobuttons
-        self.tested_yes_radio = tk.Radiobutton(self, text="Yes", font=("Arial", 8), variable=self.relative_choice, value="yes")
+        self.tested_yes_radio = tk.Radiobutton(self, text="Yes", font=("Arial", 8), variable=self.tested_choice, value="yes")
         self.tested_yes_radio.place(x=400, y=430)
         self.tested_yes_radio.config(bg="#B3FFA8")
 
         # Create No Radiobuttons
-        self.tested_No_radio = tk.Radiobutton(self, text="No", font=("Arial", 8), variable=self.relative_choice, value="yes")
+        self.tested_No_radio = tk.Radiobutton(self, text="No", font=("Arial", 8), variable=self.tested_choice, value="yes")
         self.tested_No_radio.place(x=470, y=430)
         self.tested_No_radio.config(bg="#B3FFA8")
 
