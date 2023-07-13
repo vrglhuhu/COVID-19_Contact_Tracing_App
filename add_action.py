@@ -4,7 +4,7 @@
 # Import libraries
 import tkinter as tk
 from PIL import ImageTk, Image
-
+import csv
 # Create a class for add 
 class AddFrame(tk.Frame):
     def __init__(self, master=None):
@@ -330,7 +330,7 @@ class AddFrame(tk.Frame):
     # Define the data for submit
     def submit_data(self):
         # Get the entered data for Basic information
-        user_name= self.name_entry.get()
+        user_name = self.name_entry.get()
         user_age = self.age_entry.get()
         user_birthday = self.bday_entry()
         date = self.date_entry.get()
@@ -356,15 +356,12 @@ class AddFrame(tk.Frame):
         exposure = self.exposure_choice.get()
         tested = self.tested_choice.get()
 
-
-
-        
-        
-        
-        
-        
-        
-        pass
+        # Save the file using CVS
+        with open('.csv', 'a', newline='') as file:
+            writer = csv.writer(file)
+            writer.writerow([user_name, user_age, user_birthday, date, user_contact_num, user_email, 
+                             emergency_name, emergency_contact_num, emergency_email, relationship,  
+                             travel, transmission, relative, vaccine, symptoms, exposure, tested])
 
 
     # Display text will be gone if the user click the entry
