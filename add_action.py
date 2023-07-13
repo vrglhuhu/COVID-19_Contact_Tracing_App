@@ -5,6 +5,10 @@
 import csv
 import tkinter as tk
 from PIL import ImageTk, Image
+from close_contact_window import CloseContactWind
+from suspected_contact_window import SuspectedContactWind
+from positive_case_window import PositiveCaseWind
+from safe_case_window import SafeCaseWind
 
 
 # Create a class for add 
@@ -364,8 +368,21 @@ class AddFrame(tk.Frame):
             writer.writerow([user_name, user_age, user_birthday, date, user_contact_num, user_email, 
                              emergency_name, emergency_contact_num, emergency_email, relationship,  
                              travel, transmission, relative, vaccine, symptoms, exposure, tested])
-            
+            # Create notification for user
+            if transmission == "Yes" and exposure == "Yes":
+                # Display the window for close contact
+                CloseContactWind()
+            elif travel == "Yes" and symptoms == "Yes":
+                # Display the window suspected close contact
+                SuspectedContactWind()
+            elif tested == "Yes":
+                # Display that you are a covid positive
+                PositiveCaseWind()
+            else:
+                # Display that you are not a close contact and not a covid positive
+                SafeCaseWind()
 
+        
     # Display text will be gone if the user click the entry
 
     def clear_name_text(self, event):
