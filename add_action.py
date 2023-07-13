@@ -95,9 +95,9 @@ class AddFrame(tk.Frame):
         self.cont_num_entry.config(fg="gray")
 
         # Email Address
-        self.age = tk.Label(self, text="EMAIL ADDRESS: ", height=1, font=("Arial", 8))
-        self.age.place(x=590, y=40)
-        self.age.config(bg="#BAF8FA")
+        self.email = tk.Label(self, text="EMAIL ADDRESS: ", height=1, font=("Arial", 8))
+        self.email.place(x=590, y=40)
+        self.email.config(bg="#BAF8FA")
 
         # Email Address Input
         self.email_ad_entry = tk.Entry(self, width=22)
@@ -326,7 +326,7 @@ class AddFrame(tk.Frame):
         birthday = self.bday_entry()
         date = self.date_entry.get()
         contact_num = self.cont_num.get()
-        
+
 
 
         
