@@ -30,32 +30,33 @@ class SearchFrame(tk.Frame):
         search_button = tk.Button(self, text="SEARCH", command=self.perform_search)
         search_button.place(x=50, y=90) 
 
+        self.result_canvas = tk.Canvas(self, width=700, height=220, bg="white", highlightthickness=1, highlightbackground="black")
+        self.result_canvas.place(x=70, y=210)
+
     def perform_search(self):
             # Get the entered name for search
             search_name = self.search_entry.get()
+            found = False
 
             # Search the name in the CSV file
             with open('entry.csv', 'r') as file:
                 reader = csv.reader(file)
                 for row in reader:
-                    if len(row) > 0 and row[0] == search_name:
-                        # Display the corresponding data for the name
-                        # You can customize the output based on your requirements
-                        print("Name:", row[0])
-                        print("Age:", row[1])
-                        print("Birthday:", row[2])
-                        # Display other corresponding data as needed
-
+                    if row[0] == search_name:
+                        found = True
                         # You can create labels or update existing labels to display the data in the GUI
-                        # Example:
-                        # self.name_label.config(text="Name: " + row[0])
-                        # self.age_label.config(text="Age: " + row[1])
-                        # ...
+                        result = f"Name: {row[0]}\nAge: {row[1]}\nBirthday: {row[2]}"
+
+                        # Output other data fields as needed
+                        self.result_canvas.create_text(10, 10, anchor="nw", text=result, font=("Arial", 11), fill="black")
 
                         # Exit the loop once the name is found
                         break
 
 
-    def perform_search(self):
-        # Search logic goes here
-        pass
+            if not found:
+                self.result_label.config(text="Name not found.")
+
+
+
+

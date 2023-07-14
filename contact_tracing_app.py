@@ -9,31 +9,31 @@ from search_action import SearchFrame
 
 # Create the main window
 class FirstPage():
-    def main_window():
-        window = tk.Tk()
-        window.title("COVID-19 CONTACT TRACING APP")
+    def __init__(self):
+        self.window = tk.Tk()
+        self.window.title("COVID-19 CONTACT TRACING APP")
 
         # Set the window size and position it in the center of the screen
-        window.geometry("900x500")
-        window.resizable(False, False)
+        self.window.geometry("900x500")
+        self.window.resizable(False, False)
 
         # Set the background image
         image_path = r"C:\Users\Chean vergel\Pictures\Contact Tracing Images\covid- 19.png"
         image = Image.open(image_path)
-        photo = ImageTk.PhotoImage(image)
+        self.photo = ImageTk.PhotoImage(image)
         
-        background_label = tk.Label(window, image=photo)
-        background_label.place(x=0, y=0, relwidth=1, relheight=1)
+        self.background_label = tk.Label(self.window, image=self.photo)
+        self.background_label.place(x=0, y=0, relwidth=1, relheight=1)
 
         # Create buttons for adding and searching
-        add_button = tk.Button(window, text="Add", command=FirstPage.add_action)
+        add_button = tk.Button(self.window, text="Add", command=FirstPage.add_action)
         add_button.place(x=640, y=230, width=100, height=30)
 
-        search_button = tk.Button(window, text="Search", command=FirstPage.search_action)
+        search_button = tk.Button(self.window, text="Search", command=FirstPage.search_action)
         search_button.place(x=640, y=265, width=100, height=30)
         
         # Start the main loop
-        window.mainloop()
+        self.window.mainloop()
 
     # Create add action
     def add_action():
@@ -46,6 +46,13 @@ class FirstPage():
         # Search action logic goes here
         search_frame = SearchFrame()
         search_frame.place(x=0, y=0, relwidth=1, relheight=1)
+    
+    def close_window(self):
+        self.window.destroy()
+    
+    def run(self):
+        self.window.mainloop()
         
-# Create an instance of the FirstPage class and call the main_window function
-FirstPage.main_window()
+if __name__ == "__main__":
+    app = FirstPage()
+    app.run()

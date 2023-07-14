@@ -26,6 +26,18 @@ class LastFrame(tk.Frame):
         ok_button = tk.Button(self.master, text="OK", command=self.close_window, bg='#8D60FF', font=('new times roman', 12))
         ok_button.place(x=430, y=380)
 
+        # create back button
+        back_button = tk.Button(self, text='Back', command=self.go_to_main_window, bg='yellow', font=('new times roman', 12))
+        back_button.place(x=20, y=20)
+
     # Define the exit window. This home window will exit the program
     def close_window(self):
         self.master.destroy()
+
+    def go_to_main_window(self):
+        self.master.destroy()
+        self.after(0, self.open_main_window)
+    
+    def open_main_window(self):
+        app = self.FirstPage()
+        app.main_window()
