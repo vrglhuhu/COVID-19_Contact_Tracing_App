@@ -21,6 +21,12 @@ _I am Chean Bernard V. Vergel.  I am 18 years old and currently I am a first ye
 - > **Health Declaration:** Users can declare their vaccination status for COVID-19, presence of symptoms in the past 7 days, exposure to a confirmed COVID-19 patient, and whether they have been tested for COVID-19 in the past 14 days.
 - > **Search Functionality:** The app provides a search feature that allows users to search for saved information based on a registered name. The search results are displayed in separate canvases, showing the basic information, emergency information, travel declaration, and health declaration.
 
+### **ADD or SEARCH INTERFACE**
+![Screenshot 2023-07-15 144647](https://github.com/vrglhuhu/COVID-19_Contact_Tracing_App/assets/129587048/7855b0b4-9122-487b-b7c3-50c2e7854374)
+### **ADD INTERFACE**
+![Screenshot 2023-07-15 144704](https://github.com/vrglhuhu/COVID-19_Contact_Tracing_App/assets/129587048/e56bce7a-c5ef-4493-af63-e44ac5b88e65)
+### **SEARCH INTERFACE**
+![Screenshot 2023-07-15 144727](https://github.com/vrglhuhu/COVID-19_Contact_Tracing_App/assets/129587048/fa58c326-4bef-48ee-b073-be95c38fbfb6)
 ### **RUN VIDEO**
 
 https://github.com/vrglhuhu/COVID-19_Contact_Tracing_App/assets/129587048/b49776e4-6af4-4d15-a82d-b98df339e913
