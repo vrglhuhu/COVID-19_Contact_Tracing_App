@@ -352,7 +352,7 @@ class AddFrame(tk.Frame):
         travel = self.travel_choice.get()
         transmission = self.transmission_choice.get()
         relative = self.relative_choice.get()
-
+  
         # Get the entered data for Health Declaration
         vaccine = self.vaccine_choice.get()
         symptoms = self.symptoms_choice.get()
