@@ -14,7 +14,7 @@ class AddFrame(tk.Frame):
         tk.Frame.__init__(self, master)
 
         # Set the background image
-        self.add_image_path = r"C:\Users\Chean vergel\Pictures\Contact Tracing Images\covid- 19 second.png"
+        self.add_image_path = r"C:\Users\Chean vergel\Pictures\Contact Tracing Images\updated add action.png"
         self.add_image = Image.open(self.add_image_path)
         self.add_image = self.add_image.resize((900, 500), Image.NEAREST)
         self.add_photo = ImageTk.PhotoImage(self.add_image)
@@ -326,8 +326,8 @@ class AddFrame(tk.Frame):
         self.tested_No_radio.config(bg="#B3FFA8")
 
         # Create Submit Button
-        submit_button = tk.Button(self, text="SUBMIT", command= self.submit_data, bg="green")
-        submit_button.place(x=35, y=400)
+        submit_button = tk.Button(self, text="SUBMIT", command= self.submit_data, bg="#e19c55")
+        submit_button.place(x=100, y=400)
 
 
     # Define the data for submit
