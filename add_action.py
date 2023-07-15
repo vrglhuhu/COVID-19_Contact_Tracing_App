@@ -410,14 +410,3 @@ class AddFrame(tk.Frame):
     def clear_emer_email_add_text(self, event):
         self.emer_email_add_entry.delete(0, tk.END)
         self.emer_email_add_entry.config(fg="black")
-
-        
-
-
-
-
-
-
-
-
-        
