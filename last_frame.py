@@ -10,7 +10,7 @@ class LastFrame(tk.Frame):
     def __init__(self, master=None):
         tk.Frame.__init__(self, master)
 
-        self.label = tk.Label(self, text="SAFE CASE")
+        self.label = tk.Label(self, text="CONTACT TRACING CASE")
         self.label.pack(pady=20)
 
         # Set the background image
